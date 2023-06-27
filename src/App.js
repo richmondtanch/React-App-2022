@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+
 import Expense from './components/Expenses/Expense';
+import NewExpense from './components/NewExpenses/NewExpense';
 
 function App() {
   const expenses = [
@@ -26,9 +28,13 @@ function App() {
     },
   ];
   
+  const onSaveExpenseDataHandler =(enteredExpenseData) => {
+    console.log(enteredExpenseData);
+}
+
   return (
     <div className="App">
-      <h2>Let's get started</h2>
+      <NewExpense onSaveExpenseData={onSaveExpenseDataHandler}/>
       <Expense items={expenses} />
       </div>
   );
