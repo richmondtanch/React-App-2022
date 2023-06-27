@@ -6,8 +6,9 @@ import Expense from '../Expenses/Expense';
 const NewExpense = (props) => {
     const onSaveExpenseDataHandler =(enteredExpenseData) => {
         const expenseData = {
-            ...enteredExpenseData,
-            id: Math.random().toString()
+            id: Math.random().toString(),
+            ...enteredExpenseData
+            
         };
         props.onSaveExpenseData(expenseData);
     }
